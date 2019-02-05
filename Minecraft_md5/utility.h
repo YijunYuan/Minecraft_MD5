@@ -126,9 +126,9 @@ void inline NOT_32(ostream& STREAM, const string& IP, const string& RES) {
 	for (int i = 0; i < 32; i++) {
 		STREAM << "scoreboard players operation stemp1 svars"
 			<< " = bit" << i << " vars." << IP << endl;
-		STREAM << "execute if score stemp1 svars matches 1..1 "
+		STREAM << "execute if score stemp1 svars matches 1 "
 			<< "run scoreboard players set bit" << i << " vars." << RES << " 0" << endl;
-		STREAM << "execute if score stemp1 svars matches 0..0 "
+		STREAM << "execute if score stemp1 svars matches 0 "
 			<< "run scoreboard players set bit" << i << " vars." << RES << " 1" << endl;
 	}
 }
@@ -139,9 +139,9 @@ void inline AND_32(ostream& STREAM, const string& IP1, const string& IP2, const 
 			<< " = bit" << i << " vars." << IP1 << endl;
 		STREAM << "scoreboard players operation stemp1 svars"
 			<< " += bit" << i << " vars." << IP2 << endl;
-		STREAM << "execute if score stemp1 svars matches 2..2 "
+		STREAM << "execute if score stemp1 svars matches 2 "
 			<< "run scoreboard players set bit" << i << " vars." << RES << " 1" << endl;
-		STREAM << "execute unless score stemp1 svars matches 2..2 "
+		STREAM << "execute unless score stemp1 svars matches 2 "
 			<< "run scoreboard players set bit" << i << " vars." << RES << " 0" << endl;
 	}
 }
@@ -152,9 +152,9 @@ void inline OR_32(ostream& STREAM, const string& IP1, const string& IP2, const s
 			<< " = bit" << i << " vars." << IP1 << endl;
 		STREAM << "scoreboard players operation stemp1 svars"
 			<< " += bit" << i << " vars." << IP2 << endl;
-		STREAM << "execute unless score stemp1 svars matches 0..0 "
+		STREAM << "execute unless score stemp1 svars matches 0 "
 			<< "run scoreboard players set bit" << i << " vars." << RES << " 1" << endl;
-		STREAM << "execute if score stemp1 svars matches 0..0 "
+		STREAM << "execute if score stemp1 svars matches 0 "
 			<< "run scoreboard players set bit" << i << " vars." << RES << " 0" << endl;
 	}
 }

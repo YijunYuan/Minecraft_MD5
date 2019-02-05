@@ -122,7 +122,7 @@ void inline append1(size_t k) {
 	ofstream ofs("append1_" + to_string(k)+".mcfunction");
 	for (size_t i = 0; i < k; i++) {
 		ofs << "execute if score initial_len svars matches "
-			<< i << ".." << i << " run "
+			<< i << " run "
 			<< "scoreboard players set bit7 vars.msg_char" << i << " 1" << endl;
 	}
 }
