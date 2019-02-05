@@ -163,10 +163,6 @@ void md5(const uint8_t* initial_msg, size_t initial_len, uint8_t* digest) {
 	///to_bytes(h1, digest + 4);
 	///to_bytes(h2, digest + 8);
 	///to_bytes(h3, digest + 12);
-	cout << "h0:\t" << h0 << endl
-		<< "h1:\t" << h1 << endl
-		<< "h2:\t" << h2 << endl
-		<< "h3:\t" << h3 << endl;
 	* digest       = uint8_t(h0      );
 	*(digest +  1) = uint8_t(h0 >>  8);
 	*(digest +  2) = uint8_t(h0 >> 16);

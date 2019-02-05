@@ -30,22 +30,3 @@ void inline load_constants_k() {
 	}
 	ofs.close();
 }
-
-/*
-void load_constants_r() {
-	const uint32_t r[64] = {
-		7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22, 7, 12, 17, 22,
-		5,  9, 14, 20, 5,  9, 14, 20, 5,  9, 14, 20, 5,  9, 14, 20,
-		4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23, 4, 11, 16, 23,
-		6, 10, 15, 21, 6, 10, 15, 21, 6, 10, 15, 21, 6, 10, 15, 21
-	};
-
-	ofstream ofs("load_constants_r.mcfunction");
-
-	for (int i = 0; i < 64; i++) {
-		DECLARE_AND_SET_INT(ofs, "const.r" + to_string(i), r[i], 32);
-		ofs << endl << endl;
-	}
-	ofs.close();
-}
-*/
