@@ -359,7 +359,7 @@ void inline display_result() {
 	cout << endl;
 	ofs << "tellraw @a [";
 	for (int i = 0; i < 31; i++) {
-		ofs << R"({"selector":"@e[tag=char)" << i << R"(]"},)";
+		ofs << R"({"selector":"@e[tag=char)" << i << R"(]","color":"green","underlined":true},)";
 	}
-	ofs << R"({"selector":"@e[tag=char)" << 31 << R"(]"}])" << endl;
+	ofs << R"({"selector":"@e[tag=char)" << 31 << R"(]","color":"green","underlined":true}])" << endl;
 }
