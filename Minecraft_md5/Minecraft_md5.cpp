@@ -7,34 +7,21 @@
 #include "install.h"
 #include "reset.h"
 #include "uninstall.h"
+#include <thread>
 using namespace std;
 
-uint32_t test(uint32_t initial_len) {
-	uint32_t new_len;
-	for (new_len = initial_len + 1; new_len % (512 / 8) != 448 / 8; new_len++);
-	return new_len;
-}
-
-void fuck() {
-	cout << (567 * 8) << endl
-		 << ((567 * 8) >> 8) << endl
-		 << ((567 * 8) >> 16) << endl
-		 << (567 >> 29) << endl;
-
-
-}
-
 int main() {
-	//test_fuck();
-	uninstall();
-	load_constants_k();
-	declare_variables();
-	core_func();
-	result();
-	display_result();
-	test_string("The quick brown fox jumps over the lazy dog");
+	thread t1(uninstall);
+	thread t2(load_constants_k);
+	thread t3(core_func);
+	thread t4(result);
+	thread t5(display_result);
+	thread t6(test_string, "The quick brown fox jumps over the lazy dog.");
+	thread t7(install);
+	thread t8(reset);
 
-	install();
-	reset();
-	
+	t1.join(); t2.join(); t3.join(); t4.join();
+	t5.join(); t6.join(); t7.join(); t8.join();
+
+	return 0;
 }
