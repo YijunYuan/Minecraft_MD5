@@ -56,7 +56,7 @@ void inline reset() {
 
 	//set result to 0
 	for (int i = 0; i < 32; i++) {
-		ofs << "scoreboard players set md5.char" << i << " result 0" << endl;
+		ofs << "scoreboard players set md5.char" << i << " md5.result 0" << endl;
 	}
 
 	//re-summon armor_stand for displaying result

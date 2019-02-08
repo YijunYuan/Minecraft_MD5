@@ -51,6 +51,6 @@ void inline install() {
 	MAKE_SCONST(ofs, 64);
 
 	//make result
-	ofs << "scoreboard objectives add result dummy" << endl;
+	ofs << "scoreboard objectives add md5.result dummy" << endl;
 	ofs.close();
 }
