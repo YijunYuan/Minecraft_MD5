@@ -35,9 +35,6 @@
     <ClInclude Include="result.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="test.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="install.h">
       <Filter>头文件</Filter>
     </ClInclude>
@@ -45,6 +42,12 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="uninstall.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="test_string.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="import_string.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

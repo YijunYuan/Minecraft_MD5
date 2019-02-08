@@ -13,7 +13,7 @@ void inline append1(size_t);
 void inline core_func() {
 	for (size_t k = 56; k <= 568; k += 64) {
 		ofstream ofs("./output/core" + to_string(k) + ".mcfunction");
-
+		/*
 		//memcpy(msg, initial_msg, initial_len);
 		for (size_t l = 0; l < k; l++) {
 			COPY(ofs, "msg_char" + to_string(l), "ini_char" + to_string(l), 8,0);
@@ -21,7 +21,7 @@ void inline core_func() {
 
 		ofs << "function md5:append1_" << k << endl;
 		append1(k);
-
+		*/
 		// append the len in bits at the end of the buffer.
 		///to_bytes(initial_len * 8, msg + new_len);
 		//*(msg + new_len) = uint8_t(initial_len * 8);
