@@ -1,6 +1,5 @@
 ﻿#include <iostream>
 #include "load_constants.h"
-#include "preparation.h"
 #include "core.h"
 #include "result.h"
 #include "test.h"
