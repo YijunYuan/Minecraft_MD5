@@ -12,7 +12,7 @@ void inline append1(size_t);
 
 void inline core_func() {
 	for (size_t k = 56; k <= 568; k += 64) {
-		ofstream ofs("core" + to_string(k) + ".mcfunction");
+		ofstream ofs("./output/core" + to_string(k) + ".mcfunction");
 
 		//memcpy(msg, initial_msg, initial_len);
 		for (size_t l = 0; l < k; l++) {
@@ -119,7 +119,7 @@ void inline core_func() {
 }
 
 void inline append1(size_t k) {
-	ofstream ofs("append1_" + to_string(k)+".mcfunction");
+	ofstream ofs("./output/append1_" + to_string(k)+".mcfunction");
 	for (size_t i = 0; i < k; i++) {
 		ofs << "execute if score initial_len svars matches "
 			<< i << " run "

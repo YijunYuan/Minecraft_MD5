@@ -2,7 +2,7 @@
 #include "utility.h"
 
 void inline result() {
-	ofstream ofs("result.mcfunction");
+	ofstream ofs("./output/result.mcfunction");
 	ofs << "scoreboard objectives add result dummy" << endl;
 	for (int i = 0; i < 32; i++) {
 		ofs << "scoreboard players set md5.char" << i << " result 0" << endl;
@@ -320,11 +320,7 @@ void inline result() {
 }
 
 void inline display_result() {
-	ofstream ofs("display_result.mcfunction");
-	ofs << "execute as @e[tag=md5] run kill @s" << endl;
-	for (int i = 0; i < 32; i++) {
-		ofs << R"(summon armor_stand ~ ~ ~ {CustomName:"\"fuck\"", Tags:["md5", "char)" << i << R"("]})" << endl;
-	}
+	ofstream ofs("./output/display_result.mcfunction");
 
 	for (int i = 0; i < 32; i++) {
 		ofs << R"(execute if score md5.char)" << i << R"( result matches 0 run data merge entity @e[tag=char)"

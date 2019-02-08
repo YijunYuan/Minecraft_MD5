@@ -4,6 +4,8 @@
 #include "core.h"
 #include "result.h"
 #include "test.h"
+#include "install.h"
+#include "reset.h"
 using namespace std;
 
 uint32_t test(uint32_t initial_len) {
@@ -30,4 +32,7 @@ int main() {
 	result();
 	display_result();
 	test_string("The quick brown fox jumps over the lazy dog");
+
+	install();
+	reset();
 }

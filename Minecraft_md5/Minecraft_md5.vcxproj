@@ -168,7 +168,9 @@
   <ItemGroup>
     <ClInclude Include="core.h" />
     <ClInclude Include="load_constants.h" />
+    <ClInclude Include="install.h" />
     <ClInclude Include="preparation.h" />
+    <ClInclude Include="reset.h" />
     <ClInclude Include="result.h" />
     <ClInclude Include="test.h" />
     <ClInclude Include="utility.h" />
