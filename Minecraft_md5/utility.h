@@ -20,6 +20,10 @@ void inline SET_INT(ostream& STREAM, const string& NAME, uint32_t VALUE, size_t 
 	}
 }
 
+void inline REMOVE_INT(ostream& ofs,const string& name) {
+	ofs << "scoreboard objectives remove " << name << endl;
+}
+
 void inline DECLARE_AND_SET_INT(ostream& STREAM, const string& NAME, uint32_t VALUE, size_t LENGTH) {
 	DECLARE_INT(STREAM, NAME, LENGTH);
 	SET_INT(STREAM, NAME, VALUE, LENGTH);

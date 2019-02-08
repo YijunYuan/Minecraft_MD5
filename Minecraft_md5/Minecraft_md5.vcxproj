@@ -173,6 +173,7 @@
     <ClInclude Include="reset.h" />
     <ClInclude Include="result.h" />
     <ClInclude Include="test.h" />
+    <ClInclude Include="uninstall.h" />
     <ClInclude Include="utility.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

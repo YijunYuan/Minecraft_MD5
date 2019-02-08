@@ -6,6 +6,7 @@
 #include "test.h"
 #include "install.h"
 #include "reset.h"
+#include "uninstall.h"
 using namespace std;
 
 uint32_t test(uint32_t initial_len) {
@@ -25,7 +26,7 @@ void fuck() {
 
 int main() {
 	//test_fuck();
-
+	uninstall();
 	load_constants_k();
 	declare_variables();
 	core_func();
@@ -35,4 +36,5 @@ int main() {
 
 	install();
 	reset();
+	
 }
