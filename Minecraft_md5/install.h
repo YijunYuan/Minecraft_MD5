@@ -41,6 +41,7 @@ void inline install() {
 		DECLARE_INT(ofs, "w" + to_string(i), 32);
 	}
 
+	//make constants
 	MAKE_SCONST(ofs, 1);
 	MAKE_SCONST(ofs, 2);
 	MAKE_SCONST(ofs, 4);
@@ -49,5 +50,7 @@ void inline install() {
 	MAKE_SCONST(ofs, 32);
 	MAKE_SCONST(ofs, 64);
 
+	//make result
+	ofs << "scoreboard objectives add result dummy" << endl;
 	ofs.close();
 }

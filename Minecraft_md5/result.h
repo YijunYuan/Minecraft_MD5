@@ -3,11 +3,6 @@
 
 void inline result() {
 	ofstream ofs("./output/result.mcfunction");
-	ofs << "scoreboard objectives add result dummy" << endl;
-	for (int i = 0; i < 32; i++) {
-		ofs << "scoreboard players set md5.char" << i << " result 0" << endl;
-	}
-	//ofs << "scoreboard players operation md5.char0 result += bit4 vars.h0" << endl;
 
 #pragma region h0
 	ofs << "execute if score bit7 vars.h0 matches 1 run "
