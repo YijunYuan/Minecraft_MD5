@@ -60,7 +60,7 @@ void inline reset() {
 	}
 
 	//re-summon armor_stand for displaying result
-	ofs << "execute as @e[tag=md5] run kill @s" << endl;
+	ofs << "kill @e[tag=md5]" << endl;
 	for (int i = 0; i < 32; i++) {
 		ofs << R"(summon armor_stand ~ 0 ~ {NoGravity:1b,Invisible:1,Invulnerable:1,CustomName:"\"fuck\"", Tags:["md5", "char)" << i << R"("]})" << endl;
 	}

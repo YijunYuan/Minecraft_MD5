@@ -40,7 +40,7 @@ void inline uninstall() {
 
 	REMOVE_INT(ofs, "md5.result");
 
-	ofs << "execute as @e[tag=md5] run kill @s" << endl;
+	ofs << "kill @e[tag=md5]" << endl;
 
 	ofs.close();
 }
