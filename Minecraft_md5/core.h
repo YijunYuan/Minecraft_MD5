@@ -13,15 +13,9 @@ void inline append1(size_t);
 void inline core_func() {
 	for (size_t k = 56; k <= 568; k += 64) {
 		ofstream ofs("./output/core" + to_string(k) + ".mcfunction");
-		/*
-		//memcpy(msg, initial_msg, initial_len);
-		for (size_t l = 0; l < k; l++) {
-			COPY(ofs, "msg_char" + to_string(l), "ini_char" + to_string(l), 8,0);
-		}
 
-		ofs << "function md5:append1_" << k << endl;
-		append1(k);
-		*/
+		//We should notice that '1' has been appended to the end of the string in "import_string.mcfunction"
+
 		// append the len in bits at the end of the buffer.
 		///to_bytes(initial_len * 8, msg + new_len);
 		//*(msg + new_len) = uint8_t(initial_len * 8);
@@ -62,7 +56,6 @@ void inline core_func() {
 					NOT_32(ofs, "b", "temp2");
 					AND_32(ofs, "temp2", "d", "temp3");
 					OR_32(ofs, "temp1", "temp3", "f");
-					//SET_INT(ofs, "g", i, 32);
 				}
 				else if (i < 32) {
 					//f = (d & b) | ((~d) & c);
@@ -71,14 +64,12 @@ void inline core_func() {
 					NOT_32(ofs, "d", "temp2");
 					AND_32(ofs, "temp2", "c", "temp3");
 					OR_32(ofs, "temp1", "temp3", "f");
-					//SET_INT(ofs, "g", (5 * i + 1) % 16, 32);
 				}
 				else if (i < 48) {
 					//f = b ^ c ^ d;
 					g = (3 * i + 5) % 16;
 					XOR_32(ofs, "b", "c", "temp1");
 					XOR_32(ofs, "temp1", "d", "f");
-					//SET_INT(ofs, "g", (3 * i + 5) % 16, 32);
 				}
 				else {
 					//f = c ^ (b | (~d));
@@ -86,7 +77,6 @@ void inline core_func() {
 					NOT_32(ofs, "d", "temp1");
 					OR_32(ofs, "b", "temp1", "temp2");
 					XOR_32(ofs, "c", "temp2", "f");
-					//SET_INT(ofs, "g", (7 * i) % 16, 32);
 				}
 
 				COPY(ofs, "temp", "d", 32,0);
@@ -118,11 +108,3 @@ void inline core_func() {
 	}
 }
 
-void inline append1(size_t k) {
-	ofstream ofs("./output/append1_" + to_string(k)+".mcfunction");
-	for (size_t i = 0; i < k; i++) {
-		ofs << "execute if score initial_len svars matches "
-			<< i << " run "
-			<< "scoreboard players set bit7 vars.msg_char" << i << " 1" << endl;
-	}
-}

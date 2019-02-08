@@ -70,6 +70,12 @@ void inline SVAR_COPY(ostream& STREAM, const string& TO, const string& FROM) {
 		<< FROM << " svars" << endl;
 }
 
+void inline SVAR_COPY(ostream& STREAM, const string& TO, const string& TO_SCB, const string& FROM, const string& FROM_SCB) {
+	STREAM << "scoreboard players operation "
+		<< TO << " "  << TO_SCB << " = "
+		<< FROM << " " << FROM_SCB << endl;
+}
+
 void inline COPY(ostream& STREAM, const string& TO, const string& FROM, size_t LENGTH, size_t offset) {
 	for (size_t i = 0; i < LENGTH; i++) {
 		STREAM << "scoreboard players operation "
@@ -82,7 +88,53 @@ void inline MAKE_SCONST(ostream& STREAM, uint32_t VALUE) {
 	MAKE_SVAR(STREAM, "const" + to_string(VALUE), VALUE);
 }
 
+void inline SVAR_TO_VAR_8_impl(ostream& STREAM, const string& SVAR,const string& SVAR_SCB, const string& VAR) {
+	SVAR_COPY(STREAM, "stemp1","svars",SVAR, SVAR_SCB);
+	SVAR_COPY(STREAM, "stemp2", "stemp1");
+	SVAR_MOD(STREAM, "stemp2", "const2");
+	STREAM << "scoreboard players operation bit0 vars."
+		<< VAR << " = stemp2 svars" << endl;
+	SVAR_DIVIDE(STREAM, "stemp1", "const2");
+	SVAR_COPY(STREAM, "stemp2", "stemp1");
+	SVAR_MOD(STREAM, "stemp2", "const2");
+	STREAM << "scoreboard players operation bit1 vars."
+		<< VAR << " = stemp2 svars" << endl;
+	SVAR_DIVIDE(STREAM, "stemp1", "const2");
+	SVAR_COPY(STREAM, "stemp2", "stemp1");
+	SVAR_MOD(STREAM, "stemp2", "const2");
+	STREAM << "scoreboard players operation bit2 vars."
+		<< VAR << " = stemp2 svars" << endl;
+	SVAR_DIVIDE(STREAM, "stemp1", "const2");
+	SVAR_COPY(STREAM, "stemp2", "stemp1");
+	SVAR_MOD(STREAM, "stemp2", "const2");
+	STREAM << "scoreboard players operation bit3 vars."
+		<< VAR << " = stemp2 svars" << endl;
+	SVAR_DIVIDE(STREAM, "stemp1", "const2");
+	SVAR_COPY(STREAM, "stemp2", "stemp1");
+	SVAR_MOD(STREAM, "stemp2", "const2");
+	STREAM << "scoreboard players operation bit4 vars."
+		<< VAR << " = stemp2 svars" << endl;
+	SVAR_DIVIDE(STREAM, "stemp1", "const2");
+	SVAR_COPY(STREAM, "stemp2", "stemp1");
+	SVAR_MOD(STREAM, "stemp2", "const2");
+	STREAM << "scoreboard players operation bit5 vars."
+		<< VAR << " = stemp2 svars" << endl;
+	SVAR_DIVIDE(STREAM, "stemp1", "const2");
+	SVAR_COPY(STREAM, "stemp2", "stemp1");
+	SVAR_MOD(STREAM, "stemp2", "const2");
+	STREAM << "scoreboard players operation bit6 vars."
+		<< VAR << " = stemp2 svars" << endl;
+	SVAR_DIVIDE(STREAM, "stemp1", "const2");
+	SVAR_COPY(STREAM, "stemp2", "stemp1");
+	SVAR_MOD(STREAM, "stemp2", "const2");
+	STREAM << "scoreboard players operation bit7 vars."
+		<< VAR << " = stemp2 svars" << endl;
+	SVAR_DIVIDE(STREAM, "stemp1", "const2");
+}
+
 void inline SVAR_TO_VAR_8(ostream& STREAM, const string& SVAR, const string& VAR) {
+	SVAR_TO_VAR_8_impl(STREAM, SVAR, "svars", VAR);
+	/*
 	SVAR_COPY(STREAM, "stemp1", SVAR);
 	SVAR_COPY(STREAM, "stemp2", "stemp1");
 	SVAR_MOD(STREAM, "stemp2", "const2");
@@ -124,6 +176,7 @@ void inline SVAR_TO_VAR_8(ostream& STREAM, const string& SVAR, const string& VAR
 	STREAM << "scoreboard players operation bit7 vars."
 		<< VAR << " = stemp2 svars" << endl;
 	SVAR_DIVIDE(STREAM, "stemp1", "const2");
+	*/
 }
 
 void inline NOT_32(ostream& STREAM, const string& IP, const string& RES) {
