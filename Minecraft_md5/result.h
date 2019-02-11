@@ -339,17 +339,17 @@ void inline display_result() {
 		ofs << R"(execute if score md5.char)" << i << R"( md5.result matches 9 run data merge entity @e[tag=char)"
 			<< i << R"(,limit=1] {CustomName:"\"9\""})" << endl;
 		ofs << R"(execute if score md5.char)" << i << R"( md5.result matches 10 run data merge entity @e[tag=char)"
-			<< i << R"(,limit=1] {CustomName:"\"A\""})" << endl;
+			<< i << R"(,limit=1] {CustomName:"\"a\""})" << endl;
 		ofs << R"(execute if score md5.char)" << i << R"( md5.result matches 11 run data merge entity @e[tag=char)"
-			<< i << R"(,limit=1] {CustomName:"\"B\""})" << endl;
+			<< i << R"(,limit=1] {CustomName:"\"b\""})" << endl;
 		ofs << R"(execute if score md5.char)" << i << R"( md5.result matches 12 run data merge entity @e[tag=char)"
-			<< i << R"(,limit=1] {CustomName:"\"C\""})" << endl;
+			<< i << R"(,limit=1] {CustomName:"\"c\""})" << endl;
 		ofs << R"(execute if score md5.char)" << i << R"( md5.result matches 13 run data merge entity @e[tag=char)"
-			<< i << R"(,limit=1] {CustomName:"\"D\""})" << endl;
+			<< i << R"(,limit=1] {CustomName:"\"d\""})" << endl;
 		ofs << R"(execute if score md5.char)" << i << R"( md5.result matches 14 run data merge entity @e[tag=char)"
-			<< i << R"(,limit=1] {CustomName:"\"E\""})" << endl;
+			<< i << R"(,limit=1] {CustomName:"\"e\""})" << endl;
 		ofs << R"(execute if score md5.char)" << i << R"( md5.result matches 15 run data merge entity @e[tag=char)"
-			<< i << R"(,limit=1] {CustomName:"\"F\""})" << endl;
+			<< i << R"(,limit=1] {CustomName:"\"f\""})" << endl;
 	}
 	
 	ofs << "tellraw @a [";
