@@ -11,6 +11,7 @@ const uint32_t r[64] = {
 void inline append1(size_t);
 
 void inline core_func() {
+#pragma omp parallel for
 	for (size_t k = 56; k <= 568; k += 64) {
 		ofstream ofs("./output/core" + to_string(k) + ".mcfunction");
 
