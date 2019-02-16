@@ -9,8 +9,10 @@ void inline reset() {
 		SET_INT(ofs, "ini_char" + to_string(i), 0, 8);
 	}
 
+	/*
 	//length of initial string
 	MAKE_SVAR(ofs, "initial_len", 0);
+	*/
 
 	//set msg_char[]={0,...,0}
 	for (int i = 0; i < 577; i++) {

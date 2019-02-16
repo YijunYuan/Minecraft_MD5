@@ -8,10 +8,12 @@ void inline install() {
 	//make constants k[]
 	ofs << "function md5:load_constants_k" << endl;
 
+	/*
 	//declare ini_char[]
 	for (int i = 0; i < 567; i++) {
 		DECLARE_INT(ofs, "ini_char" + to_string(i),  8);
 	}
+	*/
 
 	//declare msg_char[]
 	for (int i = 0; i < 577; i++) {
