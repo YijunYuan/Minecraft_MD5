@@ -26,9 +26,6 @@
     <ClInclude Include="utility.h">
       <Filter>头文件</Filter>
     </ClInclude>
-    <ClInclude Include="preparation.h">
-      <Filter>头文件</Filter>
-    </ClInclude>
     <ClInclude Include="core.h">
       <Filter>头文件</Filter>
     </ClInclude>
