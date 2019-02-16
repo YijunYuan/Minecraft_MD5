@@ -16,13 +16,18 @@ int main() {
 	thread t3(core_func);
 	thread t4(result);
 	thread t5(display_result);
-	thread t6(test_string, "The quick brown fox jumps over the lazy dog.");
+	thread t6(test_string, "The quick brown fox jumps over the lazy dogThe quick brown fox jumps over the lazy dog");
 	thread t7(install);
 	thread t8(reset);
 	thread t9(import_string);
-	t1.join(); t2.join(); t3.join(); t4.join();
-	t5.join(); t6.join(); t7.join(); t8.join();
+	t1.join();
+	t2.join();
+	t3.join();
+	t4.join();
+	t5.join();
+	t6.join();
+	t7.join();
+	t8.join();
 	t9.join();
-
 	return 0;
 }
