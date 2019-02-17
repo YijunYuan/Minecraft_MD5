@@ -104,6 +104,7 @@ void inline core_func() {
 			COPY(ofs, "h3", "temp1", 32,0);
 		}
 
+		ofs << "function md5:result" << endl;
 
 		ofs.close();
 	}
