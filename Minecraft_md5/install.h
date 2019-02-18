@@ -61,5 +61,6 @@ void inline install() {
 
 void inline install_wrapper() {
 	ofstream ofs("./output/install_wrapper.mcfunction");
+	ofs << "gamerule maxCommandChainLength 1000000" << endl;
 	ofs << "execute unless entity @e[tag=md5.enabled] run function md5:install" << endl;
 }
