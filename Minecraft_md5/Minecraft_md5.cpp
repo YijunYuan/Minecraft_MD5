@@ -6,10 +6,12 @@
 #include "uninstall.h"
 #include "test_string.h"
 #include "import_string.h"
+#include "core_wrapper.h"
 
 #include <thread>
 #include <vector>
 #include <algorithm>
+
 using namespace std;
 
 int main() {
@@ -24,6 +26,8 @@ int main() {
 	task_group.emplace_back(install);
 	task_group.emplace_back(reset);
 	task_group.emplace_back(import_string);
+	task_group.emplace_back(core_wrapper);
+	task_group.emplace_back(install_wrapper);
 	for (auto& itr : task_group)
 		itr.join();
 

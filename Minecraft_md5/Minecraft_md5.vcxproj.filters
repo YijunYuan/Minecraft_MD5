@@ -47,5 +47,8 @@
     <ClInclude Include="import_string.h">
       <Filter>头文件</Filter>
     </ClInclude>
+    <ClInclude Include="core_wrapper.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

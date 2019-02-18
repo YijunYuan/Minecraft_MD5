@@ -167,6 +167,7 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="core.h" />
+    <ClInclude Include="core_wrapper.h" />
     <ClInclude Include="import_string.h" />
     <ClInclude Include="load_constants.h" />
     <ClInclude Include="install.h" />

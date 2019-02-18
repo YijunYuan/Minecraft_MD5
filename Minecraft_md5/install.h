@@ -54,5 +54,12 @@ void inline install() {
 
 	//make result
 	ofs << "scoreboard objectives add md5.result dummy" << endl;
+
+	ofs << R"(summon minecraft:armor_stand ~ 0 ~ {NoGravity:1b,Invisible:1,Invulnerable:1,Tags:["md5.enabled"]})" << endl;
 	ofs.close();
+}
+
+void inline install_wrapper() {
+	ofstream ofs("./output/install_wrapper.mcfunction");
+	ofs << "execute unless entity @e[tag=md5.enabled] run function md5:install" << endl;
 }

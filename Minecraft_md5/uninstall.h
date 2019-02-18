@@ -41,6 +41,7 @@ void inline uninstall() {
 	REMOVE_INT(ofs, "md5.result");
 
 	ofs << "kill @e[tag=md5]" << endl;
+	ofs << "kill @e[tag=md5.enabled]" << endl;
 
 	ofs.close();
 }
