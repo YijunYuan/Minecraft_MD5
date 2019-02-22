@@ -2,7 +2,7 @@
 #include "utility.h"
 
 void inline reset() {
-	ofstream ofs("./output/reset.mcfunction");
+	ofstream ofs("./output/md5/data/md5/functions/reset.mcfunction");
 
 	//set ini_char[]={0,...,0}
 	for (int i = 0; i < 567; i++) {

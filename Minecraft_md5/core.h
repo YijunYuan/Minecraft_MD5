@@ -13,7 +13,7 @@ void inline append1(size_t);
 void inline core_func() {
 #pragma omp parallel for
 	for (size_t k = 56; k <= 568; k += 64) {
-		ofstream ofs("./output/core" + to_string(k) + ".mcfunction");
+		ofstream ofs("./output/md5/data/md5/functions/core" + to_string(k) + ".mcfunction");
 
 		//We should notice that '1' has been appended to the end of the string in "import_string.mcfunction"
 

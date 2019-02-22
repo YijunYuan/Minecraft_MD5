@@ -2,7 +2,7 @@
 #include "utility.h"
 
 void inline uninstall() {
-	ofstream ofs("./output/uninstall.mcfunction");
+	ofstream ofs("./output/md5/data/md5/functions/uninstall.mcfunction");
 
 	REMOVE_INT(ofs, "svars");
 

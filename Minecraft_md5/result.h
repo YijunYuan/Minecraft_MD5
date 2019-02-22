@@ -2,7 +2,7 @@
 #include "utility.h"
 
 void inline result() {
-	ofstream ofs("./output/result.mcfunction");
+	ofstream ofs("./output/md5/data/md5/functions/result.mcfunction");
 
 #pragma region h0
 	ofs << "execute if score bit7 vars.h0 matches 1 run "
@@ -315,7 +315,7 @@ void inline result() {
 }
 
 void inline display_result() {
-	ofstream ofs("./output/display_result.mcfunction");
+	ofstream ofs("./output/md5/data/md5/functions/display_result.mcfunction");
 
 	for (int i = 0; i < 32; i++) {
 		ofs << R"(execute if score md5.char)" << i << R"( md5.result matches 0 run data merge entity @e[tag=char)"

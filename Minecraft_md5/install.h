@@ -1,7 +1,7 @@
 #pragma once
 #include "utility.h"
 void inline install() {
-	ofstream ofs("./output/install.mcfunction");
+	ofstream ofs("./output/md5/data/md5/functions/install.mcfunction");
 
 	ofs << "gamerule maxCommandChainLength 1000000" << endl;
 
@@ -64,6 +64,6 @@ void inline install() {
 }
 
 void inline install_wrapper() {
-	ofstream ofs("./output/install_wrapper.mcfunction");
+	ofstream ofs("./output/md5/data/md5/functions/install_wrapper.mcfunction");
 	ofs << "execute unless entity @e[tag=md5.enabled] run function md5:install" << endl;
 }
