@@ -42,6 +42,6 @@ void inline uninstall() {
 
 	ofs << "kill @e[tag=md5]" << endl;
 	ofs << "kill @e[tag=md5.enabled]" << endl;
-
+	ofs << "scoreboard objectives remove md5.login" << endl;
 	ofs.close();
 }

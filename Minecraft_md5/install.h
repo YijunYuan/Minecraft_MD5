@@ -3,6 +3,8 @@
 void inline install() {
 	ofstream ofs("./output/install.mcfunction");
 
+	ofs << "gamerule maxCommandChainLength 1000000" << endl;
+
 	ofs << "scoreboard objectives add svars dummy" << endl;
 
 	//make constants k[]
@@ -55,12 +57,13 @@ void inline install() {
 	//make result
 	ofs << "scoreboard objectives add md5.result dummy" << endl;
 
+	ofs << "scoreboard objectives add md5.login minecraft.custom:minecraft.leave_game" << endl;
+
 	ofs << R"(summon minecraft:armor_stand ~ 0 ~ {NoGravity:1b,Invisible:1,Invulnerable:1,Tags:["md5.enabled"]})" << endl;
 	ofs.close();
 }
 
 void inline install_wrapper() {
 	ofstream ofs("./output/install_wrapper.mcfunction");
-	ofs << "gamerule maxCommandChainLength 1000000" << endl;
 	ofs << "execute unless entity @e[tag=md5.enabled] run function md5:install" << endl;
 }

@@ -260,5 +260,4 @@ paket-files/
 __pycache__/
 *.pyc
 
-*.mcfunction
 *.7z

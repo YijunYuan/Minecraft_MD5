@@ -352,7 +352,7 @@ void inline display_result() {
 			<< i << R"(,limit=1] {CustomName:"\"f\""})" << endl;
 	}
 	
-	ofs << "tellraw @a [";
+	ofs << "tellraw @s [";
 	for (int i = 0; i < 31; i++) {
 		ofs << R"({"selector":"@e[tag=char)" << i << R"(]","color":"green","underlined":true},)";
 	}
