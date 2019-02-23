@@ -17,6 +17,7 @@
 
 1. We do **NOT** support empty string.
 2. The length of the inputted string should **less** then 567.
+3. We only support ASCII characters.
 
 If you ignore these limitations, this datapack will give wrong result **without any warning**, althouth making a warning is not difficult at all.
 
@@ -76,10 +77,9 @@ If you ignore these limitations, this datapack will give wrong result **without 
    /funtion md5:uninstall
    ```
 
-
 -----
 
-#### Tip: 
+#### Tips: 
 
 - This is a very huge datapack, which may (with a great chance) cause the loading process of the world being extremely lagggggggggggggggggggggggy. If you only need to deal with the short strings (length **less than 56**), you can delete 
 
