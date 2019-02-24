@@ -4,11 +4,6 @@
 void inline reset() {
 	ofstream ofs("./output/md5/data/md5/functions/reset.mcfunction");
 
-	//set ini_char[]={0,...,0}
-	for (int i = 0; i < 567; i++) {
-		SET_INT(ofs, "ini_char" + to_string(i), 0, 8);
-	}
-
 	/*
 	//length of initial string
 	MAKE_SVAR(ofs, "initial_len", 0);
