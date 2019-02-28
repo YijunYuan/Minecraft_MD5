@@ -1,21 +1,29 @@
 #pragma once
 #include "utility.h"
 void inline install() {
-	ofstream ofs("./output/md5/data/md5/functions/install.mcfunction");
+	ofstream ofs("./output/install.mcfunction");
 
 	ofs << "gamerule maxCommandChainLength 1000000" << endl;
 
 	ofs << "scoreboard objectives add svars dummy" << endl;
 
+
+	ofs << "kill @e[tag=md5.bit]" << endl;
+	for (int i = 0; i < 32; i++) {
+		ofs << R"(summon armor_stand ~)" << i <<
+			R"( ~ ~ {CustomName:"{\"text\":\"bit)" << i << R"(\"}",NoGravity:1b,Invulnerable:1b,Invisible:1b,Tags:["md5.bit","md5.bit)" << i << R"("]})" <<
+			endl;
+	}
+
+	for (int i = 1; i <= 32; i++) {
+		for (int j = 0; j < i; j++) {
+			ofs << R"(tag @e[tag=md5.bit)" << j << R"(] add L)" << i << endl;
+		}
+	}
+
+
 	//make constants k[]
 	ofs << "function md5:load_constants_k" << endl;
-
-	/*
-	//declare ini_char[]
-	for (int i = 0; i < 567; i++) {
-		DECLARE_INT(ofs, "ini_char" + to_string(i),  8);
-	}
-	*/
 
 	//declare msg_char[]
 	for (int i = 0; i < 577; i++) {
@@ -38,7 +46,6 @@ void inline install() {
 	DECLARE_INT(ofs, "temp1",  32);
 	DECLARE_INT(ofs, "temp2",  32);
 	DECLARE_INT(ofs, "temp3",  32);
-	DECLARE_INT(ofs, "temp4",  32);
 
 	//declare w[]
 	for (int i = 0; i < 16; i++) {
@@ -64,6 +71,6 @@ void inline install() {
 }
 
 void inline install_wrapper() {
-	ofstream ofs("./output/md5/data/md5/functions/install_wrapper.mcfunction");
+	ofstream ofs("./output/install_wrapper.mcfunction");
 	ofs << "execute unless entity @e[tag=md5.enabled] run function md5:install" << endl;
 }

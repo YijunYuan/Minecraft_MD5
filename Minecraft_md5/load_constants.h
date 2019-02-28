@@ -22,7 +22,7 @@ void inline load_constants_k() {
 		0xf7537e82, 0xbd3af235, 0x2ad7d2bb, 0xeb86d391
 	};
 
-	ofstream ofs("./output/md5/data/md5/functions/load_constants_k.mcfunction");
+	ofstream ofs("./output/load_constants_k.mcfunction");
 
 	for (int i = 0; i < 64; i++) {
 		DECLARE_AND_SET_INT(ofs, "const.k" + to_string(i), k[i], 32);

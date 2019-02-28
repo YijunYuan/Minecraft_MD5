@@ -2,16 +2,12 @@
 #include "utility.h"
 
 void inline reset() {
-	ofstream ofs("./output/md5/data/md5/functions/reset.mcfunction");
+	ofstream ofs("./output/reset.mcfunction");
 
-	/*
-	//length of initial string
-	MAKE_SVAR(ofs, "initial_len", 0);
-	*/
 
 	//set msg_char[]={0,...,0}
 	for (int i = 0; i < 577; i++) {
-		SET_INT(ofs, "msg_char" + to_string(i), 0, 8);
+		CLEAR_INT(ofs, "msg_char" + to_string(i), 8);
 	}
 
 	//length of msg
@@ -26,23 +22,22 @@ void inline reset() {
 	ofs << endl << endl;
 
 	//a,b,c,d,i,f,g,temp
-	SET_INT(ofs, "a", 0, 32);
-	SET_INT(ofs, "b", 0, 32);
-	SET_INT(ofs, "c", 0, 32);
-	SET_INT(ofs, "d", 0, 32);
-	SET_INT(ofs, "f", 0, 32);
-	SET_INT(ofs, "temp", 0, 32);
-	SET_INT(ofs, "temp1", 0, 32);
-	SET_INT(ofs, "temp2", 0, 32);
-	SET_INT(ofs, "temp3", 0, 32);
-	SET_INT(ofs, "temp4", 0, 32);
+	CLEAR_INT(ofs, "a", 32);
+	CLEAR_INT(ofs, "b", 32);
+	CLEAR_INT(ofs, "c", 32);
+	CLEAR_INT(ofs, "d", 32);
+	CLEAR_INT(ofs, "f", 32);
+	CLEAR_INT(ofs, "temp", 32);
+	CLEAR_INT(ofs, "temp1", 32);
+	CLEAR_INT(ofs, "temp2", 32);
+	CLEAR_INT(ofs, "temp3", 32);
 
 	//offset
 	MAKE_SVAR(ofs, "offset", 0);
 
 	//set w[16]={0,...,0}
 	for (int i = 0; i < 16; i++) {
-		SET_INT(ofs, "w" + to_string(i), 0, 32);
+		CLEAR_INT(ofs, "w" + to_string(i), 32);
 	}
 
 	//small temporary variables
@@ -59,7 +54,9 @@ void inline reset() {
 	//re-summon armor_stand for displaying result
 	ofs << "kill @e[tag=md5]" << endl;
 	for (int i = 0; i < 32; i++) {
-		ofs << R"(summon armor_stand ~ 0 ~ {NoGravity:1b,Invisible:1,Invulnerable:1,CustomName:"\"fuck\"", Tags:["md5", "char)" << i << R"("]})" << endl;
+		ofs <<
+			R"(summon armor_stand ~ 0 ~ {NoGravity:1b,Invisible:1,Invulnerable:1,CustomName:"\"fuck\"", Tags:["md5", "char)"
+			<< i << R"("]})" << endl;
 	}
 
 	ofs.close();

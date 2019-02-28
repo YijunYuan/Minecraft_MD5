@@ -2,7 +2,7 @@
 #include "utility.h"
 
 void inline uninstall() {
-	ofstream ofs("./output/md5/data/md5/functions/uninstall.mcfunction");
+	ofstream ofs("./output/uninstall.mcfunction");
 
 	REMOVE_INT(ofs, "svars");
 
@@ -32,7 +32,6 @@ void inline uninstall() {
 	REMOVE_INT(ofs, "vars.temp1");
 	REMOVE_INT(ofs, "vars.temp2");
 	REMOVE_INT(ofs, "vars.temp3");
-	REMOVE_INT(ofs, "vars.temp4");
 
 	for (int i = 0; i < 16; i++) {
 		REMOVE_INT(ofs, "vars.w" + to_string(i));
@@ -41,6 +40,7 @@ void inline uninstall() {
 	REMOVE_INT(ofs, "md5.result");
 
 	ofs << "kill @e[tag=md5]" << endl;
+	ofs << "kill @e[tag=md5.bit]" << endl;
 	ofs << "kill @e[tag=md5.enabled]" << endl;
 	ofs << "scoreboard objectives remove md5.login" << endl;
 	ofs.close();

@@ -13,7 +13,7 @@ void inline append1(size_t);
 void inline core_func() {
 #pragma omp parallel for
 	for (size_t k = 56; k <= 568; k += 64) {
-		ofstream ofs("./output/md5/data/md5/functions/core" + to_string(k) + ".mcfunction");
+		ofstream ofs("./output/core" + to_string(k) + ".mcfunction");
 
 		//We should notice that '1' has been appended to the end of the string in "import_string.mcfunction"
 
@@ -35,17 +35,17 @@ void inline core_func() {
 
 		for (size_t os = 0; os < k; os += 64) {
 			for (int i = 0; i < 16; i++) {
-				COPY(ofs, "w" + to_string(i), "msg_char" + to_string(os + i * 4), 8,0);
+				COPY(ofs, "w" + to_string(i), "msg_char" + to_string(os + i * 4), 8, 0);
 				COPY(ofs, "w" + to_string(i), "msg_char" + to_string(os + i * 4 + 1), 8, 8);
 				COPY(ofs, "w" + to_string(i), "msg_char" + to_string(os + i * 4 + 2), 8, 16);
 				COPY(ofs, "w" + to_string(i), "msg_char" + to_string(os + i * 4 + 3), 8, 24);
-			
+
 			}
 
-			COPY(ofs, "a", "h0", 32,0);
-			COPY(ofs, "b", "h1", 32,0);
-			COPY(ofs, "c", "h2", 32,0);
-			COPY(ofs, "d", "h3", 32,0);
+			COPY(ofs, "a", "h0", 32, 0);
+			COPY(ofs, "b", "h1", 32, 0);
+			COPY(ofs, "c", "h2", 32, 0);
+			COPY(ofs, "d", "h3", 32, 0);
 
 			int g;
 
@@ -80,28 +80,28 @@ void inline core_func() {
 					XOR_32(ofs, "c", "temp2", "f");
 				}
 
-				COPY(ofs, "temp", "d", 32,0);
-				COPY(ofs, "d", "c", 32,0);
-				COPY(ofs, "c", "b", 32,0);
+				COPY(ofs, "temp", "d", 32, 0);
+				COPY(ofs, "d", "c", 32, 0);
+				COPY(ofs, "c", "b", 32, 0);
 
 				ADD_32(ofs, "a", "f", "temp1");
 				ADD_32(ofs, "temp1", "const.k" + to_string(i), "temp2");
 				ADD_32(ofs, "temp2", "w" + to_string(g), "temp1");
 				LEFT_ROTATE_32(ofs, "temp1", r[i], "temp2");
 				ADD_32(ofs, "temp2", "b", "temp1");
-				COPY(ofs, "b", "temp1", 32,0); //TODO:copy can be cancelled here!!!
+				COPY(ofs, "b", "temp1", 32, 0);
 
-				COPY(ofs, "a", "temp", 32,0);
+				COPY(ofs, "a", "temp", 32, 0);
 			}
 
 			ADD_32(ofs, "h0", "a", "temp1");
-			COPY(ofs, "h0", "temp1", 32,0);
+			COPY(ofs, "h0", "temp1", 32, 0);
 			ADD_32(ofs, "h1", "b", "temp1");
-			COPY(ofs, "h1", "temp1", 32,0);
+			COPY(ofs, "h1", "temp1", 32, 0);
 			ADD_32(ofs, "h2", "c", "temp1");
-			COPY(ofs, "h2", "temp1", 32,0);
+			COPY(ofs, "h2", "temp1", 32, 0);
 			ADD_32(ofs, "h3", "d", "temp1");
-			COPY(ofs, "h3", "temp1", 32,0);
+			COPY(ofs, "h3", "temp1", 32, 0);
 		}
 
 		ofs << "function md5:result" << endl;
@@ -109,4 +109,3 @@ void inline core_func() {
 		ofs.close();
 	}
 }
-
