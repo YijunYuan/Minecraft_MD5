@@ -81,7 +81,7 @@ If you ignore these limitations, this datapack will give wrong result **without 
 
 #### Tips: 
 
-- This is a very huge datapack, which may (with a great chance) cause the loading process of the world being extremely lagggggggggggggggggggggggy. If you only need to deal with the short strings (length **less than 56**), you can delete 
+- This is a big datapack, which may  cause the loading process of the world being a little laggy. If you only need to deal with the short strings (length **less than 56**), you can delete 
 
 ```
 core120.mcfunction
