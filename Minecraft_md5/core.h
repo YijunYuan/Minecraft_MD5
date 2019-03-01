@@ -88,20 +88,20 @@ void inline core_func() {
 				ADD_32(ofs, "temp1", "const.k" + to_string(i), "temp2");
 				ADD_32(ofs, "temp2", "w" + to_string(g), "temp1");
 				LEFT_ROTATE_32(ofs, "temp1", r[i], "temp2");
-				ADD_32(ofs, "temp2", "b", "temp1");
-				COPY(ofs, "b", "temp1", 32, 0);
+				ADD_32(ofs, "b", "temp2",  "b");
+				//COPY(ofs, "b", "temp1", 32, 0);
 
 				COPY(ofs, "a", "temp", 32, 0);
 			}
 
-			ADD_32(ofs, "h0", "a", "temp1");
-			COPY(ofs, "h0", "temp1", 32, 0);
-			ADD_32(ofs, "h1", "b", "temp1");
-			COPY(ofs, "h1", "temp1", 32, 0);
-			ADD_32(ofs, "h2", "c", "temp1");
-			COPY(ofs, "h2", "temp1", 32, 0);
-			ADD_32(ofs, "h3", "d", "temp1");
-			COPY(ofs, "h3", "temp1", 32, 0);
+			ADD_32(ofs, "h0", "a", "h0");
+			//COPY(ofs, "h0", "temp1", 32, 0);
+			ADD_32(ofs, "h1", "b", "h1");
+			//COPY(ofs, "h1", "temp1", 32, 0);
+			ADD_32(ofs, "h2", "c", "h2");
+			//COPY(ofs, "h2", "temp1", 32, 0);
+			ADD_32(ofs, "h3", "d", "h3");
+			//COPY(ofs, "h3", "temp1", 32, 0);
 		}
 
 		ofs << "function md5:result" << endl;

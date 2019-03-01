@@ -12,14 +12,12 @@ void inline reset() {
 
 	//length of msg
 	MAKE_SVAR(ofs, "new_len", 0);
-	ofs << endl << endl;
 
 	//h0,h1,h2,h3
 	SET_INT(ofs, "h0", 0x67452301, 32);
 	SET_INT(ofs, "h1", 0xefcdab89, 32);
 	SET_INT(ofs, "h2", 0x98badcfe, 32);
 	SET_INT(ofs, "h3", 0x10325476, 32);
-	ofs << endl << endl;
 
 	//a,b,c,d,i,f,g,temp
 	CLEAR_INT(ofs, "a", 32);
